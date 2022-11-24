@@ -246,7 +246,7 @@ public class RequireJavadoc {
     if (require_package_info) {
       for (Path javaFile : javaFiles) {
         @SuppressWarnings("nullness:assignment") // the file is not "/", so getParent() is non-null
-        @NonNull Path javaFileParent = javaFile.getParent();
+        Path javaFileParent = javaFile.getParent();
         // Java 11 has Path.of() instead of creating a new File.
         Path packageInfo = javaFileParent.resolve(new File("package-info.java").toPath());
         if (!javaFiles.contains(packageInfo)) {
@@ -482,7 +482,7 @@ public class RequireJavadoc {
    * @param propertyKind the type of property method
    * @return the name of the property, or null
    */
-  private @Nullable String propertyName(MethodDeclaration md, PropertyKind propertyKind) {
+  private String propertyName(MethodDeclaration md, PropertyKind propertyKind) {
     String methodName = md.getNameAsString();
     assert methodName.startsWith(propertyKind.prefix);
     @SuppressWarnings("index") // https://github.com/typetools/checker-framework/issues/5201
@@ -637,7 +637,7 @@ public class RequireJavadoc {
    * @param md a method declaration
    * @return its sole statement, or null
    */
-  private @Nullable Statement getOnlyStatement(MethodDeclaration md) {
+  private Statement getOnlyStatement(MethodDeclaration md) {
     Optional<BlockStmt> body = md.getBody();
     if (!body.isPresent()) {
       return null;
