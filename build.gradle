@@ -94,7 +94,7 @@ checkerFramework {
     '-Ainfer=ajava',
     '-Awarns',
     '-AinferOutputOriginal',
-    '-Aajava=/tmp/WPITEMPDIR',
+    '-Aajava=~/tmp/WPITEMPDIR',
     '-AcheckPurityAnnotations',
     '-ArequirePrefixInWarningSuppressions',
     '-AwarnUnneededSuppressions',

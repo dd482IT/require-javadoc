@@ -14,8 +14,8 @@ WPITEMPDIR=/tmp/WPITEMPDIR
 # directory ending in build/whole-program-inference. For most projects,
 # this directory is just ./build/whole-program-inference.
 # This example is the output directory when running via the gradle plugin.
-#WPIOUTDIR=~/.gradle/workers/build/whole-program-inference
-WPIOUTDIR=/home/dan/Documents/research_kellog/require-javadoc/whole-program-inference/
+WPIOUTDIR=~/.gradle/workers/build/whole-program-inference
+#WPIOUTDIR=/home/dan/Documents/research_kellog/require-javadoc/whole-program-inference/
 # The compile and clean commands for the project's build system.
 BUILD_CMD="./gradlew compileJava"
 CLEAN_CMD="./gradlew clean"
