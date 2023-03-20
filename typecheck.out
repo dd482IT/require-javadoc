@@ -1,0 +1,24 @@
+> Task :compileJava
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:470: warning: [samelen:argument] incompatible argument for parameter propertyName of hasCorrectSignature.
+        && hasCorrectSignature(md, propertyKind, propertyName)
+                                                 ^
+  found   : @SameLen({"propertyName", "this.propertyName(md, propertyKind)"}) String
+  required: @SameLen({"propertyName", "[error for expression: this.propertyName(md, propertyKind); error: Invalid 'propertyName' because no such method]"}) String
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:471: warning: [samelen:argument] incompatible argument for parameter propertyName of hasCorrectBody.
+        && hasCorrectBody(md, propertyKind, propertyName);
+                                            ^
+  found   : @SameLen({"propertyName", "this.propertyName(md, propertyKind)"}) String
+  required: @SameLen({"propertyName", "[error for expression: this.propertyName(md, propertyKind); error: Invalid 'propertyName' because no such method]"}) String
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:513: warning: [samelen:expression.unparsable] Expression invalid in dependent type annotation: [error for expression: this.propertyName(md, propertyKind); error: Invalid 'propertyName' because no such method]
+      MethodDeclaration md, PropertyKind propertyKind, String propertyName) {
+                                                       ^
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:558: warning: [samelen:expression.unparsable] Expression invalid in dependent type annotation: [error for expression: this.propertyName(md, propertyKind); error: Invalid 'propertyName' because no such method]
+      MethodDeclaration md, PropertyKind propertyKind, String propertyName) {
+                                                       ^
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:248: warning: [nullness:unneeded.suppression] warning suppression "nullness:assignment" is not used by NullnessChecker
+        @SuppressWarnings("nullness:assignment") // the file is not "/", so getParent() is non-null
+        ^
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:251: warning: [nullness:dereference.of.nullable] dereference of possibly-null reference javaFileParent
+        Path packageInfo = javaFileParent.resolve(new File("package-info.java").toPath());
+                           ^
+6 warnings
