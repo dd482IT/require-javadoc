@@ -221,6 +221,7 @@ public class RequireJavadoc {
      *
      * @param args the directories and files listed on the command line
      */
+    @org.checkerframework.framework.qual.EnsuresQualifier(expression = { "this" }, qualifier = org.checkerframework.checker.lock.qual.GuardedByUnknown.class)
     private void setJavaFiles( @org.checkerframework.checker.lock.qual.NewObject RequireJavadoc this, @org.checkerframework.checker.lock.qual.GuardedBy({})  String @org.checkerframework.checker.lock.qual.GuardedBy({})  [] args) {
         if (args.length == 0) {
             args = new String[] { workingDirAbsolute.toString() };
@@ -415,12 +416,12 @@ public class RequireJavadoc {
         /**
          * The prefix for the method name: "get", "", "has", "is", "not", or "set".
          */
-        final @org.checkerframework.checker.lock.qual.GuardedBy({})  String prefix;
+        final  @org.checkerframework.checker.lock.qual.NewObject String prefix;
 
         /**
          * The number of required formal parameters: 0 or 1.
          */
-        final  @org.checkerframework.checker.lock.qual.GuardedBy({})  int requiredParams;
+        final   @org.checkerframework.checker.lock.qual.NewObject int requiredParams;
 
         /**
          * The return type.

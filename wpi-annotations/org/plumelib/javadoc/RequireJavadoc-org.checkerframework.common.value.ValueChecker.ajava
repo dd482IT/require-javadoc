@@ -413,17 +413,17 @@ public class RequireJavadoc {
         /**
          * The prefix for the method name: "get", "", "has", "is", "not", or "set".
          */
-        final  String prefix;
+        final @org.checkerframework.common.value.qual.StringVal({ "", "get", "has", "is", "not", "set" }) String prefix;
 
         /**
          * The number of required formal parameters: 0 or 1.
          */
-        final   int requiredParams;
+        final  @org.checkerframework.common.value.qual.IntVal({ -1L, 0L, 1L }) int requiredParams;
 
         /**
          * The return type.
          */
-        final  ReturnType returnType;
+        final @org.checkerframework.common.value.qual.StringVal({ "BOOLEAN", "NON_VOID", "VOID" }) ReturnType returnType;
 
         /**
          * Create a new PropertyKind.
@@ -432,7 +432,7 @@ public class RequireJavadoc {
          * @param requiredParams the number of required formal parameters: 0 or 1
          * @param returnType the return type
          */
-        PropertyKind(@org.checkerframework.common.value.qual.StringVal({ "set", "not", "is", "has", "", "get" }) String prefix,  @org.checkerframework.common.value.qual.IntVal({ -1, 1, 0 }) int requiredParams, @org.checkerframework.common.value.qual.StringVal({ "VOID", "BOOLEAN", "NON_VOID" }) ReturnType returnType) {
+        PropertyKind(@org.checkerframework.common.value.qual.StringVal({ "", "get", "has", "is", "not", "set" }) String prefix,  @org.checkerframework.common.value.qual.IntVal({ -1L, 0L, 1L }) int requiredParams, @org.checkerframework.common.value.qual.StringVal({ "BOOLEAN", "NON_VOID", "VOID" }) ReturnType returnType) {
             this.prefix = prefix;
             this.requiredParams = requiredParams;
             this.returnType = returnType;
@@ -444,7 +444,7 @@ public class RequireJavadoc {
          * @return true if this is a getter
          */
         @org.checkerframework.dataflow.qual.Pure
-          boolean isGetter( PropertyKind this) {
+          boolean isGetter(@org.checkerframework.common.value.qual.StringVal({ "GETTER", "GETTER_HAS", "GETTER_IS", "GETTER_NOT", "GETTER_NO_PREFIX", "SETTER" }) PropertyKind this) {
             return this != SETTER;
         }
 
@@ -454,7 +454,7 @@ public class RequireJavadoc {
          * @param md the method to check
          * @return the PropertyKind for the given method, or null
          */
-        static @org.checkerframework.common.value.qual.StringVal({ "GETTER_NO_PREFIX", "SETTER", "GETTER_NOT", "GETTER_IS", "GETTER_HAS", "GETTER" }) PropertyKind fromMethodDeclaration( MethodDeclaration md) {
+        static @org.checkerframework.common.value.qual.StringVal({ "GETTER", "GETTER_HAS", "GETTER_IS", "GETTER_NOT", "GETTER_NO_PREFIX", "SETTER" }) PropertyKind fromMethodDeclaration( MethodDeclaration md) {
             String methodName = md.getNameAsString();
             if (methodName.startsWith("get")) {
                 return GETTER;
@@ -505,7 +505,7 @@ public class RequireJavadoc {
      * @param propertyKind the kind of property
      * @return true if this method is a trivial getter or setter
      */
-    private   boolean isTrivialGetterOrSetter( RequireJavadoc this,  MethodDeclaration md,  PropertyKind propertyKind) {
+    private   boolean isTrivialGetterOrSetter( RequireJavadoc this,  MethodDeclaration md, @org.checkerframework.common.value.qual.StringVal({ "GETTER", "GETTER_HAS", "GETTER_IS", "GETTER_NOT", "GETTER_NO_PREFIX", "SETTER" }) PropertyKind propertyKind) {
         String propertyName = propertyName(md, propertyKind);
         return propertyName != null && hasCorrectSignature(md, propertyKind, propertyName) && hasCorrectBody(md, propertyKind, propertyName);
     }
@@ -521,7 +521,7 @@ public class RequireJavadoc {
      * @param propertyKind the type of property method
      * @return the name of the property, or null
      */
-    private @org.checkerframework.common.value.qual.ArrayLenRange(from = 1, to = 2147483647) String propertyName( RequireJavadoc this,  MethodDeclaration md,  PropertyKind propertyKind) {
+    private @org.checkerframework.common.value.qual.ArrayLenRange(from = 1, to = 2147483647) String propertyName( RequireJavadoc this,  MethodDeclaration md, @org.checkerframework.common.value.qual.StringVal({ "GETTER", "GETTER_HAS", "GETTER_IS", "GETTER_NOT", "GETTER_NO_PREFIX", "SETTER" }) PropertyKind propertyKind) {
         String methodName = md.getNameAsString();
         assert methodName.startsWith(propertyKind.prefix);
         String upperCamelCaseProperty = methodName.substring(propertyKind.prefix.length());
@@ -545,7 +545,7 @@ public class RequireJavadoc {
      * @param propertyName the name of the property
      * @return true if the body of the given method is a property accessor
      */
-    private  @org.checkerframework.common.value.qual.BoolVal({ true, false }) boolean hasCorrectSignature( RequireJavadoc this,  MethodDeclaration md,  PropertyKind propertyKind,  String propertyName) {
+    private  @org.checkerframework.common.value.qual.BoolVal({ false, true }) boolean hasCorrectSignature( RequireJavadoc this,  MethodDeclaration md, @org.checkerframework.common.value.qual.StringVal({ "GETTER", "GETTER_HAS", "GETTER_IS", "GETTER_NOT", "GETTER_NO_PREFIX", "SETTER" }) PropertyKind propertyKind, @org.checkerframework.common.value.qual.ArrayLenRange(from = 1, to = 2147483647) String propertyName) {
         NodeList<Parameter> parameters = md.getParameters();
         if (parameters.size() != propertyKind.requiredParams) {
             return false;
@@ -589,7 +589,7 @@ public class RequireJavadoc {
      * @param propertyName the name of the property
      * @return true if the body of the given method is a property accessor
      */
-    private  @org.checkerframework.common.value.qual.BoolVal({ true, false }) boolean hasCorrectBody( RequireJavadoc this,  MethodDeclaration md,  PropertyKind propertyKind,  String propertyName) {
+    private  @org.checkerframework.common.value.qual.BoolVal({ false, true }) boolean hasCorrectBody( RequireJavadoc this,  MethodDeclaration md, @org.checkerframework.common.value.qual.StringVal({ "GETTER", "GETTER_HAS", "GETTER_IS", "GETTER_NOT", "GETTER_NO_PREFIX", "SETTER" }) PropertyKind propertyKind, @org.checkerframework.common.value.qual.ArrayLenRange(from = 1, to = 2147483647) String propertyName) {
         Statement statement = getOnlyStatement(md);
         if (propertyKind.isGetter()) {
             if (!(statement instanceof ReturnStmt)) {

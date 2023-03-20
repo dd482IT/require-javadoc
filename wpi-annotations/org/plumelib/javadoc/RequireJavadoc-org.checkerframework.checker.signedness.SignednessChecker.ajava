@@ -418,7 +418,7 @@ public class RequireJavadoc {
         /**
          * The number of required formal parameters: 0 or 1.
          */
-        final  @org.checkerframework.checker.signedness.qual.Signed int requiredParams;
+        final  @org.checkerframework.checker.signedness.qual.SignednessGlb int requiredParams;
 
         /**
          * The return type.

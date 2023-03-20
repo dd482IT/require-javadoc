@@ -413,7 +413,7 @@ public class RequireJavadoc {
         /**
          * The prefix for the method name: "get", "", "has", "is", "not", or "set".
          */
-        final  String prefix;
+        final @org.checkerframework.checker.regex.qual.Regex(0) String prefix;
 
         /**
          * The number of required formal parameters: 0 or 1.

@@ -221,7 +221,7 @@ public class RequireJavadoc {
      *
      * @param args the directories and files listed on the command line
      */
-    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "shouldExclude" })
+    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "<init>" })
     private void setJavaFiles(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) String @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) [] args) {
         if (args.length == 0) {
             args = new String[] { workingDirAbsolute.toString() };
@@ -288,6 +288,7 @@ public class RequireJavadoc {
             return FileVisitResult.CONTINUE;
         }
 
+        @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "toString" })
         @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "shouldExclude" })
         public @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) FileVisitResult preVisitDirectory(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) JavaFilesVisitor this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) Path dir, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) BasicFileAttributes attr) {
             if (shouldExclude(dir)) {
@@ -495,7 +496,8 @@ public class RequireJavadoc {
      * @param md the method to check
      * @return true if this method is a trivial getter or setter
      */
-    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "isTrivialGetterOrSetter" })
+    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getNameAsString" })
+    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "isTrivialGetterOrSetter", "propertyName" })
     private  @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) boolean isTrivialGetterOrSetter(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) MethodDeclaration md) {
         PropertyKind kind = PropertyKind.fromMethodDeclaration(md);
         if (kind != PropertyKind.GETTER_NO_PREFIX) {
@@ -515,7 +517,7 @@ public class RequireJavadoc {
      * @return true if this method is a trivial getter or setter
      */
     @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "propertyName" })
-    private  @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) boolean isTrivialGetterOrSetter(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) PropertyKind propertyKind) {
+    private  @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) boolean isTrivialGetterOrSetter(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({ "getNameAsString" }) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) PropertyKind propertyKind) {
         String propertyName = propertyName(md, propertyKind);
         return propertyName != null && hasCorrectSignature(md, propertyKind, propertyName) && hasCorrectBody(md, propertyKind, propertyName);
     }
@@ -531,8 +533,7 @@ public class RequireJavadoc {
      * @param propertyKind the type of property method
      * @return the name of the property, or null
      */
-    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getNameAsString" })
-    private @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) String propertyName(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) PropertyKind propertyKind) {
+    private @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) String propertyName(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({ "getNameAsString" }) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) PropertyKind propertyKind) {
         String methodName = md.getNameAsString();
         assert methodName.startsWith(propertyKind.prefix);
         String upperCamelCaseProperty = methodName.substring(propertyKind.prefix.length());
@@ -556,8 +557,8 @@ public class RequireJavadoc {
      * @param propertyName the name of the property
      * @return true if the body of the given method is a property accessor
      */
-    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getParameters" })
-    private  @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) boolean hasCorrectSignature(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) PropertyKind propertyKind, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) String propertyName) {
+    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getNameAsString", "getParameters" })
+    private  @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) boolean hasCorrectSignature(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({ "getNameAsString" }) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) PropertyKind propertyKind, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) String propertyName) {
         NodeList<Parameter> parameters = md.getParameters();
         if (parameters.size() != propertyKind.requiredParams) {
             return false;
@@ -601,9 +602,10 @@ public class RequireJavadoc {
      * @param propertyName the name of the property
      * @return true if the body of the given method is a property accessor
      */
+    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getBody", "getNameAsString", "getParameters" })
     @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#2" }, methods = { "isGetter" })
     @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "getOnlyStatement" })
-    private  @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) boolean hasCorrectBody(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) PropertyKind propertyKind, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) String propertyName) {
+    private  @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) boolean hasCorrectBody(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({ "getNameAsString", "getParameters" }) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) PropertyKind propertyKind, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) String propertyName) {
         Statement statement = getOnlyStatement(md);
         if (propertyKind.isGetter()) {
             if (!(statement instanceof ReturnStmt)) {
@@ -684,8 +686,8 @@ public class RequireJavadoc {
      * @param md a method declaration
      * @return its sole statement, or null
      */
-    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getBody" })
-    private @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) Statement getOnlyStatement(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) MethodDeclaration md) {
+    @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getBody", "getNameAsString", "getParameters" })
+    private @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) Statement getOnlyStatement(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadoc this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({ "getNameAsString", "getParameters" }) MethodDeclaration md) {
         Optional<BlockStmt> body = md.getBody();
         if (!body.isPresent()) {
             return null;
@@ -795,7 +797,7 @@ public class RequireJavadoc {
             super.visit(cd, ignore);
         }
 
-        @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "isTrivialGetterOrSetter" })
+        @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "this" }, methods = { "isTrivialGetterOrSetter", "propertyName" })
         public void visit(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadocVisitor this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) MethodDeclaration md, @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) Void ignore) {
             if (dont_require_private && md.isPrivate()) {
                 return;
@@ -923,7 +925,7 @@ public class RequireJavadoc {
          * @param md the method to check for an {@code @Override} annotation
          * @return true if this method is annotated with {@code @Override}
          */
-        @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getAnnotations" })
+        @org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods(value = { "#1" }, methods = { "getAnnotations", "getNameAsString" })
         private  @org.checkerframework.checker.calledmethods.qual.CalledMethods({}) boolean isOverride(@org.checkerframework.checker.calledmethods.qual.CalledMethods({}) RequireJavadocVisitor this, @org.checkerframework.checker.calledmethods.qual.CalledMethods({ "getNameAsString" }) MethodDeclaration md) {
             for (AnnotationExpr anno : md.getAnnotations()) {
                 String annoName = anno.getName().toString();

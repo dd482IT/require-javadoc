@@ -418,7 +418,7 @@ public class RequireJavadoc {
         /**
          * The number of required formal parameters: 0 or 1.
          */
-        final   int requiredParams;
+        final  @org.checkerframework.checker.index.qual.GTENegativeOne int requiredParams;
 
         /**
          * The return type.

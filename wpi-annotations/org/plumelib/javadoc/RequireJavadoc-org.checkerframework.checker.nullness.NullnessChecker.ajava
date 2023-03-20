@@ -359,6 +359,7 @@ public class RequireJavadoc {
      * @param path a Java file or directory
      * @return true if the file or directory should be skipped
      */
+    @org.checkerframework.framework.qual.EnsuresQualifier(expression = { "this.exclude" }, qualifier = org.checkerframework.checker.nullness.qual.Nullable.class)
     private  @org.checkerframework.checker.initialization.qual.Initialized @org.checkerframework.checker.nullness.qual.NonNull boolean shouldExclude(@org.checkerframework.checker.initialization.qual.Initialized @org.checkerframework.checker.nullness.qual.NonNull Path path) {
         return shouldExclude(path.toString());
     }
