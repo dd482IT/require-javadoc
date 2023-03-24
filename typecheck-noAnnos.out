@@ -1,0 +1,38 @@
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:251: error: [nullness:dereference.of.nullable] dereference of possibly-null reference javaFileParent
+        Path packageInfo = javaFileParent.resolve(new File("package-info.java").toPath());
+                           ^
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:491: error: [nullness:return] incompatible types in return.
+      return null;
+             ^
+  type of expression: null (NullType)
+  method return type: @Initialized @NonNull String
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:496: error: [nullness:return] incompatible types in return.
+      return null;
+             ^
+  type of expression: null (NullType)
+  method return type: @Initialized @NonNull String
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:643: error: [nullness:return] incompatible types in return.
+      return null;
+             ^
+  type of expression: null (NullType)
+  method return type: @Initialized @NonNull Statement
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:647: error: [nullness:return] incompatible types in return.
+      return null;
+             ^
+  type of expression: null (NullType)
+  method return type: @Initialized @NonNull Statement
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:68: error: [regex:type.checking.not.run] RegexChecker did not run because of a previous error issued by javac
+public class RequireJavadoc {
+       ^
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:68: error: [builder:type.checking.not.run] ResourceLeakChecker did not run because of a previous error issued by javac
+public class RequireJavadoc {
+       ^
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:68: error: [signature:type.checking.not.run] SignatureChecker did not run because of a previous error issued by javac
+public class RequireJavadoc {
+       ^
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:68: error: [signedness:type.checking.not.run] SignednessChecker did not run because of a previous error issued by javac
+public class RequireJavadoc {
+       ^
+/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:68: error: [initializedfields:type.checking.not.run] InitializedFieldsChecker did not run because of a previous error issued by javac
+public class RequireJavadoc {
+       ^
