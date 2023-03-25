@@ -92,6 +92,7 @@ checkerFramework {
   ]
   extraJavacArgs = [
     //'-Werror',
+    '-Awarns',
     '-AcheckPurityAnnotations',
     '-ArequirePrefixInWarningSuppressions',
     '-AwarnUnneededSuppressions',
