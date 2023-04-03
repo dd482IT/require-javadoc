@@ -18,7 +18,7 @@ WPIOUTDIR=~/.gradle/workers/build/whole-program-inference
 #WPIOUTDIR=/home/dan/Documents/research_kellog/require-javadoc/whole-program-inference/
 # The compile and clean commands for the project's build system.
 BUILD_CMD="./gradlew compileJava -PcfLocal"
-CLEAN_CMD="./gradlew clean"
+CLEAN_CMD="./gradlew clean -PcfLocal"
 CHECKERFRAMEWORK=/Users/daniel/Documents/njit/WPI-Research/checker-framework/checker-framework-dd482IT
 export CHECKERFRAMEWORK
 # Whether to run in debug mode.
