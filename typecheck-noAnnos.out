@@ -1,23 +1,27 @@
-/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:251: warning: [nullness:dereference.of.nullable] dereference of possibly-null reference javaFileParent
+/Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:248: warning: [nullness:unneeded.suppression] warning suppression "nullness:assignment" is not used by NullnessChecker
+        @SuppressWarnings("nullness:assignment") // the file is not "/", so getParent() is non-null
+        ^
+/Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:251: warning: [nullness:dereference.of.nullable] dereference of possibly-null reference javaFileParent
         Path packageInfo = javaFileParent.resolve(new File("package-info.java").toPath());
                            ^
-/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:491: warning: [nullness:return] incompatible types in return.
+/Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:491: warning: [nullness:return] incompatible types in return.
       return null;
              ^
   type of expression: null (NullType)
   method return type: @Initialized @NonNull String
-/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:496: warning: [nullness:return] incompatible types in return.
+/Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:496: warning: [nullness:return] incompatible types in return.
       return null;
              ^
   type of expression: null (NullType)
   method return type: @Initialized @NonNull String
-/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:643: warning: [nullness:return] incompatible types in return.
+/Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:643: warning: [nullness:return] incompatible types in return.
       return null;
              ^
   type of expression: null (NullType)
   method return type: @Initialized @NonNull Statement
-/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:647: warning: [nullness:return] incompatible types in return.
+/Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:647: warning: [nullness:return] incompatible types in return.
       return null;
              ^
   type of expression: null (NullType)
   method return type: @Initialized @NonNull Statement
+6 warnings
