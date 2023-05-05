@@ -1,12 +1,8 @@
-BUILD SUCCESSFUL in 283ms
-1 actionable task: 1 executed
-entering a new iteration
-
 > Task :compileJava
-/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:248: warning: [nullness:unneeded.suppression] warning suppression "nullness:assignment" is not used by NullnessChecker
+/Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:248: warning: [nullness:unneeded.suppression] warning suppression "nullness:assignment" is not used by NullnessChecker
         @SuppressWarnings("nullness:assignment") // the file is not "/", so getParent() is non-null
         ^
-/Users/daniel/Documents/njit/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:251: warning: [nullness:dereference.of.nullable] dereference of possibly-null reference javaFileParent
+/Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:251: warning: [nullness:dereference.of.nullable] dereference of possibly-null reference javaFileParent
         Path packageInfo = javaFileParent.resolve(new File("package-info.java").toPath());
                            ^
 2 warnings
