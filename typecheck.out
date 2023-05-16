@@ -1,4 +1,3 @@
-> Task :compileJava
 /Users/daniel/Documents/NJIT/WPI-Research/experiments-live/require-javadoc-WPI/src/main/java/org/plumelib/javadoc/RequireJavadoc.java:248: warning: [nullness:unneeded.suppression] warning suppression "nullness:assignment" is not used by NullnessChecker
         @SuppressWarnings("nullness:assignment") // the file is not "/", so getParent() is non-null
         ^
